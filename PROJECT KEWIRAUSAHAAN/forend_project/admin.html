@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Daftar Pesanan Masuk</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        background-color: #f4f7f6;
+        color: #333;
+      }
+
+      /* Header menempel di atas (sticky) agar tombol logout selalu terlihat */
+      header {
+        background: #1a1a1a;
+        color: #fff;
+        padding: 20px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      }
+      header a {
+        color: #cda434;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .admin-container {
+        padding: 40px 8%;
+      }
+      h2 {
+        font-family: "Playfair Display", serif;
+        margin-bottom: 20px;
+        color: #1a1a1a;
+      }
+
+      /* Desain Tabel Utama */
+      .table-wrapper {
+        overflow-x: auto;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 1000px;
+      }
+
+      th,
+      td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+        vertical-align: middle;
+      }
+      th {
+        background-color: #cda434;
+        color: #fff;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+      }
+      tr:hover {
+        background-color: #fcf9f2;
+      }
+
+      /* Tombol Hubungi WA */
+      .btn-wa {
+        background: #25d366;
+        color: white;
+        padding: 6px 15px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-size: 0.85rem;
+        display: inline-block;
+        white-space: nowrap;
+        margin-bottom: 5px;
+      }
+      .btn-wa:hover {
+        background: #1ebe57;
+      }
+      .empty-state {
+        text-align: center;
+        padding: 30px;
+        color: #777;
+      }
+
+      /* Tombol Aksi (ACC & Hapus) */
+      .btn-acc {
+        background: #3b82f6;
+        color: white;
+        padding: 7px 12px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 0.85rem;
+        display: block;
+        margin-bottom: 8px;
+        text-align: center;
+        white-space: nowrap;
+        width: 100%;
+      }
+      .btn-acc:hover {
+        background: #2563eb;
+      }
+      .btn-delete {
+        background: #ef4444;
+        color: white;
+        padding: 7px 12px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 0.85rem;
+        display: block;
+        text-align: center;
+        white-space: nowrap;
+        width: 100%;
+      }
+      .btn-delete:hover {
+        background: #dc2626;
+      }
+
+      /* Desain Label Status */
+      .status-baru {
+        background: #fef08a;
+        color: #854d0e;
+        padding: 5px 12px;
+        border-radius: 12px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+      .status-selesai {
+        background: #bbf7d0;
+        color: #166534;
+        padding: 5px 12px;
+        border-radius: 12px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      /* Mengunci Proporsi Lebar Kolom */
+      th:nth-child(1) {
+        width: 5%;
+      }
+      th:nth-child(2) {
+        width: 15%;
+      }
+      th:nth-child(3) {
+        width: 15%;
+      }
+      th:nth-child(4) {
+        width: 12%;
+      }
+      th:nth-child(5) {
+        width: 15%;
+      }
+      th:nth-child(6) {
+        width: 23%;
+      }
+      th:nth-child(7) {
+        width: 5%;
+      }
+      th:nth-child(8) {
+        width: 10%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>Kisah <span>kita</span> - Admin Panel</div>
+      <div style="display: flex; gap: 20px; align-items: center">
+        <a href="/" target="_blank">Lihat Website</a>
+        <a
+          href="/logout"
+          style="
+            background: #ff4c4c;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            text-decoration: none;
+          "
+          >LOGOUT</a
+        >
+      </div>
+    </header>
+
+    <section class="admin-container">
+      <h2>Daftar Pesanan Masuk</h2>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Tanggal Pesan</th>
+              <th>Nama Kustomer</th>
+              <th>No WhatsApp</th>
+              <th>Jenis Acara</th>
+              <th>Catatan Khusus</th>
+              <th>Status</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for p in pesanan %}
+            <tr>
+              <td>#{{ p[0] }}</td>
+              <td>{{ p[5] }}</td>
+              <td><strong>{{ p[1] }}</strong></td>
+              <td>
+                <a
+                  href="https://wa.me/{{ p[2] }}"
+                  target="_blank"
+                  class="btn-wa"
+                  >Hubungi WA</a
+                ><br />
+                <small>{{ p[2] }}</small>
+              </td>
+              <td>{{ p[3] }}</td>
+              <td>{{ p[4] }}</td>
+
+              <td>
+                {% if p|length > 6 and p[6] == 'Selesai' %}
+                <span class="status-selesai">Selesai</span>
+                {% else %}
+                <span class="status-baru">Baru</span>
+                {% endif %}
+              </td>
+
+              <td>
+                {% if p|length > 6 and p[6] != 'Selesai' %}
+                <a href="/acc/{{ p[0] }}" class="btn-acc">✓ ACC</a>
+                {% endif %}
+
+                <a
+                  href="/delete/{{ p[0] }}"
+                  class="btn-delete"
+                  onclick="
+                    return confirm(
+                      'Yakin ingin menghapus pesanan ini secara permanen?',
+                    );
+                  "
+                  >🗑 Hapus</a
+                >
+              </td>
+            </tr>
+            {% else %}
+            <tr>
+              <td colspan="8" class="empty-state">
+                Belum ada pesanan yang masuk ke database.
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </body>
+</html>

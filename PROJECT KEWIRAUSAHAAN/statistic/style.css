@@ -1,0 +1,361 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #fafafa;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+}
+
+/* Header & Navigasi */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.logo span {
+  color: #cda434; /* Warna emas elegan */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #cda434;
+}
+
+.btn-nav {
+  background-color: #cda434;
+  color: #fff !important;
+  padding: 8px 20px;
+  border-radius: 25px;
+}
+
+.btn-nav:hover {
+  background-color: #b58d2a;
+}
+
+/* Hero Section */
+.hero {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80")
+      center/cover;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-primary {
+  background-color: #cda434;
+  color: #fff;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #fff;
+  color: #1a1a1a;
+}
+
+/* Services */
+.services {
+  padding: 80px 8%;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #1a1a1a;
+}
+
+.service-cards {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  min-width: 300px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card h3 {
+  margin-bottom: 15px;
+  color: #cda434;
+}
+
+/* Contact / Form */
+.contact {
+  padding: 80px 8%;
+  background-color: #1a1a1a;
+  color: #fff;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.contact p {
+  margin-bottom: 40px;
+  color: #ccc;
+}
+
+.alert {
+  background-color: #4caf50;
+  color: white;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #2a2a2a;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background: #1a1a1a;
+  color: #fff;
+  font-family: inherit;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+  outline: none;
+  border-color: #cda434;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 15px;
+  background-color: #cda434;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: #b58d2a;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #0d0d0d;
+  color: #666;
+  font-size: 0.9rem;
+}
+/* Reviews / Testimoni */
+.reviews {
+  padding: 80px 0;
+  background-color: #fff;
+  text-align: center;
+  overflow: hidden; /* Mencegah layar web bergeser ke samping */
+}
+
+.reviews h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #1a1a1a;
+}
+
+.review-marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+}
+
+.review-track {
+  display: inline-flex;
+  gap: 30px;
+  padding-left: 30px;
+  /* Animasi berjalan selama 20 detik, non-stop */
+  /* Secara standar web, teks berjalan dari kanan ke kiri agar mudah dibaca */
+  animation: scroll-left 20s linear infinite;
+}
+
+/* Jika mouse diarahkan ke ulasan, animasinya akan berhenti sejenak agar mudah dibaca */
+.review-track:hover {
+  animation-play-state: paused;
+}
+
+.review-card {
+  background: #fafafa;
+  padding: 30px;
+  border-radius: 10px;
+  min-width: 350px;
+  max-width: 350px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  white-space: normal; /* Agar teks memanjang ke bawah, bukan ke samping */
+  text-align: left;
+  border-left: 5px solid #cda434; /* Garis emas di kiri kartu */
+}
+
+.review-text {
+  font-style: italic;
+  margin-bottom: 15px;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.review-author {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* Animasi dari Kanan ke Kiri (Sangat disarankan agar mudah dibaca) */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 15px));
+  }
+}
+
+/* CATATAN: 
+Jika Anda BENTAR-BENAR ingin bergeraknya terbalik (dari Kiri merayap ke Kanan), 
+ubah tulisan 'animation: scroll-left' di atas menjadi 'animation: scroll-right', 
+lalu gunakan keyframes di bawah ini: */
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(calc(-50% - 15px));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+/* Gaya untuk Profil Reviewer (Foto & Nama) */
+.review-profile {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.profile-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Membuat foto menjadi bulat sempurna */
+  object-fit: cover; /* Menjaga foto tidak gepeng walau ukurannya berbeda */
+  margin-right: 15px;
+  border: 2px solid #cda434; /* Lingkaran tipis warna emas di pinggir foto */
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-author {
+  font-weight: 600;
+  color: #1a1a1a;
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+
+.review-event {
+  color: #777;
+  font-size: 0.8rem;
+}
